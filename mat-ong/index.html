@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head><meta charset="UTF-8">
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="max-image-preview:large">
-<title>Mật Ong Dú Tự Nhiên – NẤM HẢI NAM</title>
-
-
-
-
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name='robots' content='max-image-preview:large' />
+<title>Mật Ong Dú Tự Nhiên &#8211; NẤM HẢI NAM</title>
+<link rel="alternate" type="application/rss+xml" title="NẤM HẢI NAM &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="NẤM HẢI NAM &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8080%2Fmat-ong%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8080%2Fmat-ong%2F&#038;format=xml" />
 <style id="wp-img-auto-sizes-contain-inline-css">
 img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
@@ -115,14 +115,14 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-site-blocks :focus){outline-width:2px;outline-style:solid}.wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child){margin-bottom:3px}.wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content{outline-offset:4px}.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content{outline-offset:0}blockquote,caption,figcaption,h1,h2,h3,h4,h5,h6,p{text-wrap:pretty}.more-link{display:block}:where(pre){overflow-x:auto}
 /*# sourceURL=/wp-content/themes/twentytwentyfive/style.min.css */
 </style>
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
-<meta name="generator" content="WordPress 7.1.3">
-<link rel="canonical" href="/mat-ong/">
-<link rel="shortlink" href="/?p=10">
+<link rel="https://api.w.org/" href="/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/pages/10" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.3" />
+<link rel="canonical" href="/mat-ong/" />
+<link rel='shortlink' href='/?p=10' />
 	<!-- Google Fonts: Plus Jakarta Sans for Luxury Biophilic Aesthetics -->
-	<link rel="preconnect" href="https://fonts.googleapis.com/">
-	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
 	<style id="nhn-custom-styles">
 		/* ===================================================
@@ -146,7 +146,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 		}
 
 		/* ===================================================
-		   1. NAVBAR & HEADER ENHANCEMENTS
+		   1. NAVBAR & HEADER ENHANCEMENTS (BULLETPROOF FIX)
 		   =================================================== */
 		header, .wp-block-template-part[data-area="header"] {
 			position: sticky;
@@ -195,6 +195,27 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 			color: #d48812 !important;
 		}
 
+		/* RESET ALL LIST STYLES & BULLET POINTS IN NAV */
+		header ul,
+		header ol,
+		header li,
+		.wp-block-navigation,
+		.wp-block-navigation ul,
+		.wp-block-navigation ol,
+		.wp-block-navigation li,
+		.wp-block-navigation__container,
+		.wp-block-navigation__submenu-container {
+			list-style: none !important;
+			list-style-type: none !important;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+		header li::marker,
+		.wp-block-navigation li::marker {
+			content: "" !important;
+			display: none !important;
+		}
+
 		/* Nav Menu Items */
 		.wp-block-navigation .wp-block-navigation-item__content {
 			font-size: 15px !important;
@@ -206,16 +227,9 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 			text-decoration: none !important;
 			outline: none !important;
 			border: none !important;
-		}
-
-		.wp-block-navigation .wp-block-navigation-item__content:focus,
-		.wp-block-navigation .wp-block-navigation-item__content:focus-visible,
-		.wp-block-navigation .wp-block-navigation-submenu__toggle:focus,
-		.wp-block-navigation .wp-block-navigation-submenu__toggle:focus-visible {
-			outline: none !important;
-			outline-width: 0 !important;
-			border: none !important;
-			box-shadow: none !important;
+			display: inline-flex !important;
+			align-items: center !important;
+			white-space: nowrap !important;
 		}
 
 		.wp-block-navigation .wp-block-navigation-item__content:hover {
@@ -246,16 +260,20 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 			color: #1e4620 !important;
 		}
 
-		/* Dropdown Submenu - Aligned with pointer directly under "Sản Phẩm" */
+		/* Dropdown Submenu - STRICTLY HIDDEN UNTIL HOVER/FOCUS */
 		.wp-block-navigation .wp-block-navigation__submenu-container,
 		.items-justified-right .wp-block-navigation__submenu-container,
 		.wp-block-navigation-submenu .wp-block-navigation__submenu-container {
+			display: none !important;
+			visibility: hidden !important;
+			opacity: 0 !important;
+			pointer-events: none !important;
 			position: absolute !important;
 			top: 100% !important;
 			left: -12px !important;
 			right: auto !important;
-			transform: none !important;
-			min-width: 285px !important;
+			transform: translateY(-6px) !important;
+			min-width: 250px !important;
 			width: max-content !important;
 			white-space: nowrap !important;
 			background-color: #ffffff !important;
@@ -265,21 +283,31 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 			padding: 10px !important;
 			margin-top: 10px !important;
 			z-index: 999999 !important;
-			animation: nhnSubmenuSlideDown 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+			transition: opacity 0.2s ease, transform 0.2s ease !important;
+		}
+
+		/* SHOW SUBMENU ON HOVER OR FOCUS */
+		.wp-block-navigation-item.has-child:hover > .wp-block-navigation__submenu-container,
+		.wp-block-navigation-item.has-child:focus-within > .wp-block-navigation__submenu-container {
+			display: block !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+			pointer-events: auto !important;
+			transform: translateY(0) !important;
 		}
 
 		/* Hover bridge to prevent losing hover between menu item and dropdown */
 		.wp-block-navigation .wp-block-navigation__submenu-container::after {
 			content: "" !important;
 			position: absolute !important;
-			top: -12px !important;
+			top: -14px !important;
 			left: 0 !important;
 			right: 0 !important;
-			height: 12px !important;
+			height: 14px !important;
 			background: transparent !important;
 		}
 
-		/* Elegant arrow pointer directly under "Sản Phẩm" */
+		/* Arrow pointer under "Sản Phẩm" */
 		.wp-block-navigation .wp-block-navigation__submenu-container::before {
 			content: "" !important;
 			position: absolute !important;
@@ -292,25 +320,6 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 			border-top: 1px solid #d9e6dc !important;
 			border-left: 1px solid #d9e6dc !important;
 			border-radius: 2px !important;
-		}
-
-		@keyframes nhnSubmenuSlideDown {
-			from { opacity: 0; transform: translateY(-6px); }
-			to { opacity: 1; transform: translateY(0); }
-		}
-
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item,
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content,
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:focus,
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:focus-visible,
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:active,
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item.current-menu-item,
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content,
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content:focus {
-			outline: none !important;
-			outline-width: 0 !important;
-			border: none !important;
-			box-shadow: none !important;
 		}
 
 		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item {
@@ -361,6 +370,104 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 			background-color: #d48812 !important;
 			transform: translateY(-2px) !important;
 			box-shadow: 0 6px 18px rgba(212, 136, 18, 0.3) !important;
+		}
+
+		/* DESKTOP NAVBAR FIX: HIDE HAMBURGER & CLOSE BUTTONS, FORCE INLINE */
+		@media (min-width: 768px) {
+			.wp-block-navigation__responsive-container-open,
+			.wp-block-navigation__responsive-container-close {
+				display: none !important;
+			}
+			.wp-block-navigation__responsive-container {
+				display: flex !important;
+				position: static !important;
+				width: auto !important;
+				height: auto !important;
+				background-color: transparent !important;
+				padding: 0 !important;
+				overflow: visible !important;
+				visibility: visible !important;
+				opacity: 1 !important;
+				transform: none !important;
+			}
+			.wp-block-navigation__responsive-dialog,
+			.wp-block-navigation__responsive-container-content {
+				display: flex !important;
+				width: auto !important;
+				height: auto !important;
+				padding: 0 !important;
+				overflow: visible !important;
+			}
+			.wp-block-navigation__container {
+				display: flex !important;
+				flex-direction: row !important;
+				align-items: center !important;
+				gap: 4px !important;
+				list-style: none !important;
+			}
+			.wp-block-navigation-item {
+				display: inline-flex !important;
+				align-items: center !important;
+				margin: 0 !important;
+			}
+		}
+
+		/* MOBILE NAVBAR */
+		@media (max-width: 767px) {
+			.wp-block-navigation__responsive-container-open {
+				display: flex !important;
+				align-items: center !important;
+				justify-content: center !important;
+				background: #f4faf6 !important;
+				border: 1px solid #d9e6dc !important;
+				border-radius: 8px !important;
+				padding: 6px 10px !important;
+				cursor: pointer !important;
+			}
+			.wp-block-navigation__responsive-container:not(.is-menu-open) {
+				display: none !important;
+			}
+			.wp-block-navigation__responsive-container.is-menu-open {
+				display: flex !important;
+				position: fixed !important;
+				top: 0 !important;
+				left: 0 !important;
+				width: 100vw !important;
+				height: 100vh !important;
+				background: #ffffff !important;
+				z-index: 999999 !important;
+				padding: 30px 24px !important;
+				overflow-y: auto !important;
+			}
+			.wp-block-navigation__responsive-container-close {
+				display: block !important;
+				position: absolute !important;
+				top: 20px !important;
+				right: 20px !important;
+				background: transparent !important;
+				border: none !important;
+				cursor: pointer !important;
+			}
+			.wp-block-navigation__container {
+				display: flex !important;
+				flex-direction: column !important;
+				align-items: flex-start !important;
+				gap: 16px !important;
+				width: 100% !important;
+			}
+			.wp-block-navigation__submenu-container {
+				position: static !important;
+				box-shadow: none !important;
+				border: none !important;
+				background: #f8fbf9 !important;
+				padding-left: 14px !important;
+				width: 100% !important;
+				display: block !important;
+				opacity: 1 !important;
+				visibility: visible !important;
+				pointer-events: auto !important;
+				transform: none !important;
+			}
 		}
 
 		/* ===================================================
@@ -1098,20 +1205,39 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 		<!-- BRAND LOGO (CỘT TRÁI) -->
 		
 		<div class="wp-block-group is-vertical is-layout-flex wp-container-core-group-is-layout-831b2db5 wp-block-group-is-layout-flex">
-			<h1 style="font-size:clamp(14.642px, 0.915rem + ((1vw - 3.2px) * 0.721), 22px);font-weight:800;line-height:1.15;letter-spacing:0.8px" class="wp-block-site-title"><a href="/" target="_self" rel="home">NẤM HẢI NAM</a></h1>
+			<h1 style="font-size:clamp(14.642px, 0.915rem + ((1vw - 3.2px) * 0.721), 22px);font-weight:800;line-height:1.15;letter-spacing:0.8px" class="wp-block-site-title"><a href="" target="_self" rel="home">NẤM HẢI NAM</a></h1>
 		</div>
 		
 
 		<!-- NAV & ACTIONS (CỘT PHẢI) -->
 		
 		<div class="wp-block-group is-nowrap is-layout-flex wp-container-core-group-is-layout-bed5a37a wp-block-group-is-layout-flex">
-			<nav class="is-responsive items-justified-right no-wrap wp-block-navigation is-content-justification-right is-nowrap is-layout-flex wp-container-core-navigation-is-layout-edc8defb wp-block-navigation-is-layout-flex" data-wp-interactive="core/navigation" data-wp-context='{"overlayOpenedBy":{"click":false,"hover":false,"focus":false},"type":"overlay","roleAttribute":"","ariaLabel":"Menu"}'><button aria-haspopup="dialog" aria-label="Open menu" class="wp-block-navigation__responsive-container-open" data-wp-on--click="actions.openMenuOnClick" data-wp-on--keydown="actions.handleMenuKeydown"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7.5h16v1.5H4z"></path><path d="M4 15h16v1.5H4z"></path></svg></button>
-				<div class="wp-block-navigation__responsive-container has-text-color has-contrast-color has-background has-base-background-color" id="modal-1" data-wp-class--has-modal-open="state.isMenuOpen" data-wp-class--is-menu-open="state.isMenuOpen" data-wp-watch="callbacks.initMenu" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on--focusout="actions.handleMenuFocusout" tabindex="-1">
+			<nav class="is-responsive items-justified-right no-wrap wp-block-navigation is-content-justification-right is-nowrap is-layout-flex wp-container-core-navigation-is-layout-edc8defb wp-block-navigation-is-layout-flex" 
+		 data-wp-interactive="core/navigation" data-wp-context='{"overlayOpenedBy":{"click":false,"hover":false,"focus":false},"type":"overlay","roleAttribute":"","ariaLabel":"Menu"}'><button aria-haspopup="dialog" aria-label="Open menu" class="wp-block-navigation__responsive-container-open" 
+				data-wp-on--click="actions.openMenuOnClick"
+				data-wp-on--keydown="actions.handleMenuKeydown"
+			><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7.5h16v1.5H4z"></path><path d="M4 15h16v1.5H4z"></path></svg></button>
+				<div class="wp-block-navigation__responsive-container has-text-color has-contrast-color has-background has-base-background-color"  id="modal-1" 
+				data-wp-class--has-modal-open="state.isMenuOpen"
+				data-wp-class--is-menu-open="state.isMenuOpen"
+				data-wp-watch="callbacks.initMenu"
+				data-wp-on--keydown="actions.handleMenuKeydown"
+				data-wp-on--focusout="actions.handleMenuFocusout"
+				tabindex="-1"
+			>
 					<div class="wp-block-navigation__responsive-close" tabindex="-1">
-						<div class="wp-block-navigation__responsive-dialog" data-wp-bind--aria-modal="state.ariaModal" data-wp-bind--aria-label="state.ariaLabel" data-wp-bind--role="state.roleAttribute">
-							<button aria-label="Close menu" class="wp-block-navigation__responsive-container-close" data-wp-on--click="actions.closeMenuOnClick"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="m13.06 12 6.47-6.47-1.06-1.06L12 10.94 5.53 4.47 4.47 5.53 10.94 12l-6.47 6.47 1.06 1.06L12 13.06l6.47 6.47 1.06-1.06L13.06 12Z"></path></svg></button>
-							<div class="wp-block-navigation__responsive-container-content" data-wp-watch="callbacks.focusFirstElement" id="modal-1-content">
-								<ul class="wp-block-navigation__container is-responsive items-justified-right no-wrap wp-block-navigation"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/"><span class="wp-block-navigation-item__label">Trang Chủ</span></a></li><li data-wp-context="{ &quot;submenuOpenedBy&quot;: { &quot;click&quot;: false, &quot;hover&quot;: false, &quot;focus&quot;: false }, &quot;type&quot;: &quot;submenu&quot;, &quot;modal&quot;: null, &quot;previousFocus&quot;: null }" data-wp-interactive="core/navigation" data-wp-on--focusout="actions.handleMenuFocusout" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on--pointerenter="actions.openMenuOnHover" data-wp-on--pointerleave="actions.closeMenuOnHover" data-wp-watch="callbacks.initMenu" tabindex="-1" class="wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu current-menu-ancestor"><a class="wp-block-navigation-item__content" href="#"><span class="wp-block-navigation-item__label">Sản Phẩm</span></a><button data-wp-bind--aria-expanded="state.isSubmenuOpen" data-wp-on--click="actions.toggleMenuOnClick" aria-label="Sản Phẩm submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on--focus="actions.openMenuOnFocus" class="wp-block-navigation__submenu-container has-text-color has-contrast-color has-background has-base-background-color wp-block-navigation-submenu"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/nam-sach/"><span class="wp-block-navigation-item__label">Nấm Hữu Cơ Hải Nam</span></a></li><li class="wp-block-navigation-item current-menu-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/mat-ong/" aria-current="page"><span class="wp-block-navigation-item__label">Mật Ong Dú Tự Nhiên</span></a></li></ul></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/about-us/"><span class="wp-block-navigation-item__label">Về Chúng Tôi</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/contact/"><span class="wp-block-navigation-item__label">Liên Hệ</span></a></li></ul>
+						<div class="wp-block-navigation__responsive-dialog" 
+				data-wp-bind--aria-modal="state.ariaModal"
+				data-wp-bind--aria-label="state.ariaLabel"
+				data-wp-bind--role="state.roleAttribute"
+			>
+							<button aria-label="Close menu" class="wp-block-navigation__responsive-container-close" 
+				data-wp-on--click="actions.closeMenuOnClick"
+			><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="m13.06 12 6.47-6.47-1.06-1.06L12 10.94 5.53 4.47 4.47 5.53 10.94 12l-6.47 6.47 1.06 1.06L12 13.06l6.47 6.47 1.06-1.06L13.06 12Z"></path></svg></button>
+							<div class="wp-block-navigation__responsive-container-content" 
+				data-wp-watch="callbacks.focusFirstElement"
+			 id="modal-1-content">
+								<ul class="wp-block-navigation__container is-responsive items-justified-right no-wrap wp-block-navigation"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/"><span class="wp-block-navigation-item__label">Trang Chủ</span></a></li><li data-wp-context="{ &quot;submenuOpenedBy&quot;: { &quot;click&quot;: false, &quot;hover&quot;: false, &quot;focus&quot;: false }, &quot;type&quot;: &quot;submenu&quot;, &quot;modal&quot;: null, &quot;previousFocus&quot;: null }" data-wp-interactive="core/navigation" data-wp-on--focusout="actions.handleMenuFocusout" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on--pointerenter="actions.openMenuOnHover" data-wp-on--pointerleave="actions.closeMenuOnHover" data-wp-watch="callbacks.initMenu" tabindex="-1" class="wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu current-menu-ancestor"><a class="wp-block-navigation-item__content" href="#"><span class="wp-block-navigation-item__label">Sản Phẩm</span></a><button data-wp-bind--aria-expanded="state.isSubmenuOpen" data-wp-on--click="actions.toggleMenuOnClick" aria-label="Sản Phẩm submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle" ><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on--focus="actions.openMenuOnFocus" class="wp-block-navigation__submenu-container has-text-color has-contrast-color has-background has-base-background-color wp-block-navigation-submenu"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/nam-sach/"><span class="wp-block-navigation-item__label">Nấm Hữu Cơ Hải Nam</span></a></li><li class="wp-block-navigation-item current-menu-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/mat-ong/" aria-current="page"><span class="wp-block-navigation-item__label">Mật Ong Dú Tự Nhiên</span></a></li></ul></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/about-us/"><span class="wp-block-navigation-item__label">Về Chúng Tôi</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/contact/"><span class="wp-block-navigation-item__label">Liên Hệ</span></a></li></ul>
 								
 							</div>
 						</div>
@@ -1153,7 +1279,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 
 
 
-<p class="wp-block-paragraph" style="color:#445347;font-size:clamp(14px, 0.875rem + ((1vw - 3.2px) * 0.245), 16.5px);line-height:1.75;margin:0 0 20px 0">Tinh hoa hoang dã được khai thác từ loài <strong>ong dú không ngòi đốt (Meliponini)</strong> quý hiếm tại vùng sinh thái tự nhiên Bà Rịa – Vũng Tàu. Mật mang sắc hổ phách tự nhiên, vị ngọt thanh pha chua dịu độc bản và chứa <strong>hàm lượng Keo Ong (Propolis)</strong> cùng kháng sinh sinh học cao vượt trội so với mật ong thông thường.</p>
+<p class="wp-block-paragraph" style="color:#445347;font-size:clamp(14px, 0.875rem + ((1vw - 3.2px) * 0.245), 16.5px);line-height:1.75;margin:0 0 20px 0">Tinh hoa hoang dã được khai thác từ loài <strong>ong dú không ngòi đốt (Meliponini)</strong> quý hiếm tại vùng sinh thái tự nhiên Bà Rịa &#8211; Vũng Tàu. Mật mang sắc hổ phách tự nhiên, vị ngọt thanh pha chua dịu độc bản và chứa <strong>hàm lượng Keo Ong (Propolis)</strong> cùng kháng sinh sinh học cao vượt trội so với mật ong thông thường.</p>
 
 
 
@@ -1183,7 +1309,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 
 <div style="text-align:center;position:relative">
   <div style="background:#ffffff;border:2px solid #ecd8c0;border-radius:24px;padding:20px;max-width:440px;margin:0 auto">
-    <img decoding="async" src="/wp-content/uploads/nam_hainam/mat-ong-du-binh-chau.jpg" alt="Hũ Mật Ong Dú Tự Nhiên 200gr Thủy Tinh Cao Cấp" style="border-radius:16px;max-height:400px;width:auto;display:block;margin:0 auto;object-fit:contain">
+    <img decoding="async" src="/wp-content/uploads/nam_hainam/mat-ong-du-binh-chau.jpg" alt="Hũ Mật Ong Dú Tự Nhiên 200gr Thủy Tinh Cao Cấp" style="border-radius:16px;max-height:400px;width:auto;display:block;margin:0 auto;object-fit:contain" />
     <div style="margin-top:14px;padding-top:12px;border-top:1px solid #f2e3d3;display:flex;justify-content:space-around;font-size:13px;color:#5c6b60">
       <span><strong>200g</strong> / Hũ Thủy Tinh</span>
       <span><strong>100%</strong> Mật Tự Nhiên</span>
@@ -1268,9 +1394,9 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 </div>
 <!-- /wp:post-content -->
 
-</main></div>
+</div>
 <!-- /wp:columns -->
-
+</div>
 <!-- /wp:group -->
 
 <!-- BỘ ĐÔI DƯỠNG SINH: NẤM LINH CHI ĐỎ &amp; MẬT ONG DÚ -->
@@ -1282,7 +1408,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 <!-- wp:column {"verticalAlignment":"center","width":"46%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:46%">
 <!-- wp:image {"aspectRatio":"4/3","scale":"cover","sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"18px"}}} -->
-<figure class="wp-block-image size-large"><img decoding="async" src="/wp-content/uploads/nam_hainam/trai-nam-linh-chi.jpg" alt="Dàn nấm Linh Chi đỏ Hải Nam thu hái đúng độ tuổi vàng" style="border-radius:18px;aspect-ratio:4/3;object-fit:cover"></figure>
+<figure class="wp-block-image size-large"><img decoding="async" src="/wp-content/uploads/nam_hainam/trai-nam-linh-chi.jpg" alt="Dàn nấm Linh Chi đỏ Hải Nam thu hái đúng độ tuổi vàng" style="border-radius:18px;aspect-ratio:4/3;object-fit:cover" /></figure>
 <!-- /wp:image -->
 <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"13px","fontStyle":"italic"}},"color":{"text":"#5c7062"}} -->
 <p class="has-text-align-center" style="color:#5c7062;font-size:13px;margin-top:10px;font-style:italic">Dàn nấm Linh Chi đỏ Hải Nam thu hái đúng độ tuổi vàng, phủ kín lớp phấn bào tử nâu</p>
@@ -1372,8 +1498,8 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
   </div>
 </div>
 </div>
-<!-- /wp:group -->
-
+<!-- /wp:group --></div>
+</main>
 
 
 <footer class="wp-block-template-part">
@@ -1441,11 +1567,11 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 
 
 <p class="wp-block-paragraph" style="color:#b5c4b8;font-size:13px;line-height:1.9">
-<strong>Trụ sở &amp; Xưởng Nấm:</strong> Tổ 6, thôn Phước Thành, xã Tân Hòa, TX. Phú Mỹ, Bà Rịa – Vũng Tàu<br>
+<strong>Trụ sở &amp; Xưởng Nấm:</strong> Tổ 6, thôn Phước Thành, xã Tân Hòa, TX. Phú Mỹ, Bà Rịa &#8211; Vũng Tàu<br>
 <strong>Cơ sở ong dú:</strong> Xuyên Mộc, BR-VT<br>
 <strong>Hotline:</strong> <a href="tel:0900xxxxxx" style="color:#ffffff;font-weight:700;text-decoration:none">0900.xxx.xxx</a><br>
 <strong>Email:</strong> lienhe@namhainam.com<br>
-<strong>Giờ làm việc:</strong> 7:30 – 18:00 (Thứ 2 – Thứ 7)
+<strong>Giờ làm việc:</strong> 7:30 &#8211; 18:00 (Thứ 2 &#8211; Thứ 7)
 </p>
 
 </div>
@@ -1455,7 +1581,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 
 
 
-<hr class="wp-block-separator has-text-color has-background" style="background-color:#233827;color:#233827;margin-top:40px;margin-bottom:30px">
+<hr class="wp-block-separator has-text-color has-background" style="background-color:#233827;color:#233827;margin-top:40px;margin-bottom:30px"/>
 
 
 
@@ -1465,7 +1591,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 </div>
 
 </footer>
-
+</div>
 <script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/twentytwentyfive/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
