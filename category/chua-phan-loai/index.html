@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head><meta charset="UTF-8">
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="max-image-preview:large">
-<title>Chưa phân loại – NẤM HẢI NAM</title>
-
-
-
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name='robots' content='max-image-preview:large' />
+<title>Chưa phân loại &#8211; NẤM HẢI NAM</title>
+<link rel="alternate" type="application/rss+xml" title="NẤM HẢI NAM &raquo; Feed" href="/feed/" />
+<link rel="alternate" type="application/rss+xml" title="NẤM HẢI NAM &raquo; Comments Feed" href="/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="NẤM HẢI NAM &raquo; Chưa phân loại Category Feed" href="/category/chua-phan-loai/feed/" />
 <style id="wp-img-auto-sizes-contain-inline-css">
 img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
@@ -122,12 +122,12 @@ h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-backg
 a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-site-blocks :focus){outline-width:2px;outline-style:solid}.wp-block-navigation .wp-block-navigation-submenu .wp-block-navigation-item:not(:last-child){margin-bottom:3px}.wp-block-navigation .wp-block-navigation-item .wp-block-navigation-item__content{outline-offset:4px}.wp-block-navigation .wp-block-navigation-item ul.wp-block-navigation__submenu-container .wp-block-navigation-item__content{outline-offset:0}blockquote,caption,figcaption,h1,h2,h3,h4,h5,h6,p{text-wrap:pretty}.more-link{display:block}:where(pre){overflow-x:auto}
 /*# sourceURL=/wp-content/themes/twentytwentyfive/style.min.css */
 </style>
-<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
-<meta name="generator" content="WordPress 7.1.3">
+<link rel="https://api.w.org/" href="/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/categories/1" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.3" />
 	<!-- Google Fonts: Plus Jakarta Sans for Luxury Biophilic Aesthetics -->
-	<link rel="preconnect" href="https://fonts.googleapis.com/">
-	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
 	<style id="nhn-custom-styles">
 		/* ===================================================
@@ -151,7 +151,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 		}
 
 		/* ===================================================
-		   1. NAVBAR & HEADER ENHANCEMENTS
+		   1. NAVBAR & HEADER ENHANCEMENTS (BULLETPROOF FIX)
 		   =================================================== */
 		header, .wp-block-template-part[data-area="header"] {
 			position: sticky;
@@ -200,6 +200,27 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 			color: #d48812 !important;
 		}
 
+		/* RESET ALL LIST STYLES & BULLET POINTS IN NAV */
+		header ul,
+		header ol,
+		header li,
+		.wp-block-navigation,
+		.wp-block-navigation ul,
+		.wp-block-navigation ol,
+		.wp-block-navigation li,
+		.wp-block-navigation__container,
+		.wp-block-navigation__submenu-container {
+			list-style: none !important;
+			list-style-type: none !important;
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+		header li::marker,
+		.wp-block-navigation li::marker {
+			content: "" !important;
+			display: none !important;
+		}
+
 		/* Nav Menu Items */
 		.wp-block-navigation .wp-block-navigation-item__content {
 			font-size: 15px !important;
@@ -211,16 +232,9 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 			text-decoration: none !important;
 			outline: none !important;
 			border: none !important;
-		}
-
-		.wp-block-navigation .wp-block-navigation-item__content:focus,
-		.wp-block-navigation .wp-block-navigation-item__content:focus-visible,
-		.wp-block-navigation .wp-block-navigation-submenu__toggle:focus,
-		.wp-block-navigation .wp-block-navigation-submenu__toggle:focus-visible {
-			outline: none !important;
-			outline-width: 0 !important;
-			border: none !important;
-			box-shadow: none !important;
+			display: inline-flex !important;
+			align-items: center !important;
+			white-space: nowrap !important;
 		}
 
 		.wp-block-navigation .wp-block-navigation-item__content:hover {
@@ -251,16 +265,20 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 			color: #1e4620 !important;
 		}
 
-		/* Dropdown Submenu - Aligned with pointer directly under "Sản Phẩm" */
+		/* Dropdown Submenu - STRICTLY HIDDEN UNTIL HOVER/FOCUS */
 		.wp-block-navigation .wp-block-navigation__submenu-container,
 		.items-justified-right .wp-block-navigation__submenu-container,
 		.wp-block-navigation-submenu .wp-block-navigation__submenu-container {
+			display: none !important;
+			visibility: hidden !important;
+			opacity: 0 !important;
+			pointer-events: none !important;
 			position: absolute !important;
 			top: 100% !important;
 			left: -12px !important;
 			right: auto !important;
-			transform: none !important;
-			min-width: 285px !important;
+			transform: translateY(-6px) !important;
+			min-width: 250px !important;
 			width: max-content !important;
 			white-space: nowrap !important;
 			background-color: #ffffff !important;
@@ -270,21 +288,31 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 			padding: 10px !important;
 			margin-top: 10px !important;
 			z-index: 999999 !important;
-			animation: nhnSubmenuSlideDown 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+			transition: opacity 0.2s ease, transform 0.2s ease !important;
+		}
+
+		/* SHOW SUBMENU ON HOVER OR FOCUS */
+		.wp-block-navigation-item.has-child:hover > .wp-block-navigation__submenu-container,
+		.wp-block-navigation-item.has-child:focus-within > .wp-block-navigation__submenu-container {
+			display: block !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+			pointer-events: auto !important;
+			transform: translateY(0) !important;
 		}
 
 		/* Hover bridge to prevent losing hover between menu item and dropdown */
 		.wp-block-navigation .wp-block-navigation__submenu-container::after {
 			content: "" !important;
 			position: absolute !important;
-			top: -12px !important;
+			top: -14px !important;
 			left: 0 !important;
 			right: 0 !important;
-			height: 12px !important;
+			height: 14px !important;
 			background: transparent !important;
 		}
 
-		/* Elegant arrow pointer directly under "Sản Phẩm" */
+		/* Arrow pointer under "Sản Phẩm" */
 		.wp-block-navigation .wp-block-navigation__submenu-container::before {
 			content: "" !important;
 			position: absolute !important;
@@ -297,25 +325,6 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 			border-top: 1px solid #d9e6dc !important;
 			border-left: 1px solid #d9e6dc !important;
 			border-radius: 2px !important;
-		}
-
-		@keyframes nhnSubmenuSlideDown {
-			from { opacity: 0; transform: translateY(-6px); }
-			to { opacity: 1; transform: translateY(0); }
-		}
-
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item,
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content,
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:focus,
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:focus-visible,
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:active,
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item.current-menu-item,
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content,
-		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item.current-menu-item .wp-block-navigation-item__content:focus {
-			outline: none !important;
-			outline-width: 0 !important;
-			border: none !important;
-			box-shadow: none !important;
 		}
 
 		.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item {
@@ -366,6 +375,104 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 			background-color: #d48812 !important;
 			transform: translateY(-2px) !important;
 			box-shadow: 0 6px 18px rgba(212, 136, 18, 0.3) !important;
+		}
+
+		/* DESKTOP NAVBAR FIX: HIDE HAMBURGER & CLOSE BUTTONS, FORCE INLINE */
+		@media (min-width: 768px) {
+			.wp-block-navigation__responsive-container-open,
+			.wp-block-navigation__responsive-container-close {
+				display: none !important;
+			}
+			.wp-block-navigation__responsive-container {
+				display: flex !important;
+				position: static !important;
+				width: auto !important;
+				height: auto !important;
+				background-color: transparent !important;
+				padding: 0 !important;
+				overflow: visible !important;
+				visibility: visible !important;
+				opacity: 1 !important;
+				transform: none !important;
+			}
+			.wp-block-navigation__responsive-dialog,
+			.wp-block-navigation__responsive-container-content {
+				display: flex !important;
+				width: auto !important;
+				height: auto !important;
+				padding: 0 !important;
+				overflow: visible !important;
+			}
+			.wp-block-navigation__container {
+				display: flex !important;
+				flex-direction: row !important;
+				align-items: center !important;
+				gap: 4px !important;
+				list-style: none !important;
+			}
+			.wp-block-navigation-item {
+				display: inline-flex !important;
+				align-items: center !important;
+				margin: 0 !important;
+			}
+		}
+
+		/* MOBILE NAVBAR */
+		@media (max-width: 767px) {
+			.wp-block-navigation__responsive-container-open {
+				display: flex !important;
+				align-items: center !important;
+				justify-content: center !important;
+				background: #f4faf6 !important;
+				border: 1px solid #d9e6dc !important;
+				border-radius: 8px !important;
+				padding: 6px 10px !important;
+				cursor: pointer !important;
+			}
+			.wp-block-navigation__responsive-container:not(.is-menu-open) {
+				display: none !important;
+			}
+			.wp-block-navigation__responsive-container.is-menu-open {
+				display: flex !important;
+				position: fixed !important;
+				top: 0 !important;
+				left: 0 !important;
+				width: 100vw !important;
+				height: 100vh !important;
+				background: #ffffff !important;
+				z-index: 999999 !important;
+				padding: 30px 24px !important;
+				overflow-y: auto !important;
+			}
+			.wp-block-navigation__responsive-container-close {
+				display: block !important;
+				position: absolute !important;
+				top: 20px !important;
+				right: 20px !important;
+				background: transparent !important;
+				border: none !important;
+				cursor: pointer !important;
+			}
+			.wp-block-navigation__container {
+				display: flex !important;
+				flex-direction: column !important;
+				align-items: flex-start !important;
+				gap: 16px !important;
+				width: 100% !important;
+			}
+			.wp-block-navigation__submenu-container {
+				position: static !important;
+				box-shadow: none !important;
+				border: none !important;
+				background: #f8fbf9 !important;
+				padding-left: 14px !important;
+				width: 100% !important;
+				display: block !important;
+				opacity: 1 !important;
+				visibility: visible !important;
+				pointer-events: auto !important;
+				transform: none !important;
+			}
 		}
 
 		/* ===================================================
@@ -832,23 +939,105 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 			box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3) !important;
 		}
 
-		/* Organic Wave Dividers */
+		/* ===================================================
+		   ZERO-GAP SEAMLESS SECTION & WAVE SYSTEM
+		   Fixes unwanted white bands between sections/waves
+		   =================================================== */
+		/* Eliminate Gutenberg block-gap on main and entry containers */
+		.home .entry-content,
+		.home .entry-content.has-global-padding,
+		.page-id-8 .entry-content,
+		.page-id-8 .entry-content.has-global-padding,
+		.page-id-9 .entry-content,
+		.page-id-9 .entry-content.has-global-padding,
+		.page-id-10 .entry-content,
+		.page-id-10 .entry-content.has-global-padding,
+		.page-id-11 .entry-content,
+		.page-id-11 .entry-content.has-global-padding,
+		.page-id-12 .entry-content,
+		.page-id-12 .entry-content.has-global-padding,
+		.wp-site-blocks > main {
+			padding-top: 0 !important;
+			padding-bottom: 0 !important;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+			margin-block-start: 0 !important;
+			margin-block-end: 0 !important;
+			gap: 0 !important;
+			max-width: 100% !important;
+			width: 100% !important;
+		}
+
+		/* Reset block-gap margins on all direct children of homepage & landing page entry-content */
+		:root body.home .entry-content > *,
+		:root body.page-id-8 .entry-content > *,
+		:root body.page-id-9 .entry-content > *,
+		:root body.page-id-10 .entry-content > *,
+		:root body.page-id-11 .entry-content > *,
+		:root body.page-id-12 .entry-content > *,
+		:root body .entry-content > section,
+		:root body .entry-content > .nhn-wave-wrap,
+		:root body .entry-content > .alignfull,
+		.home .entry-content > *,
+		.page-id-8 .entry-content > *,
+		.page-id-10 .entry-content > *,
+		.entry-content > section,
+		.entry-content > .nhn-wave-wrap,
+		.entry-content > .alignfull {
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+			margin-block-start: 0 !important;
+			margin-block-end: 0 !important;
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			max-width: 100% !important;
+			width: 100% !important;
+		}
+
+		/* Remove white gap between main/content and footer */
+		:root body .wp-site-blocks > footer,
+		.wp-site-blocks > footer,
+		footer.wp-block-template-part {
+			margin-top: 0 !important;
+			margin-block-start: 0 !important;
+		}
+
+		/* Remove gap between sticky header and main */
+		:root body .wp-site-blocks > main,
+		.wp-site-blocks > main,
+		main#wp--skip-link--target {
+			margin-top: 0 !important;
+			margin-block-start: 0 !important;
+		}
+
+		/* Organic Wave Dividers - Flawless Seamless Transitions */
 		.nhn-wave-wrap {
-			position: relative;
-			width: 100%;
-			overflow: hidden;
-			line-height: 0;
-			z-index: 2;
+			position: relative !important;
+			width: 100% !important;
+			max-width: 100% !important;
+			overflow: hidden !important;
+			line-height: 0 !important;
+			font-size: 0 !important;
+			margin: -1px 0 !important; /* -1px micro-overlap prevents any subpixel rendering seam */
+			padding: 0 !important;
+			display: block !important;
+			z-index: 2 !important;
 		}
 		.nhn-wave-wrap svg {
-			position: relative;
-			display: block;
-			width: calc(100% + 1.3px);
-			height: 60px;
+			position: relative !important;
+			display: block !important;
+			width: 100% !important;
+			width: calc(100% + 2px) !important;
+			height: 60px !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			vertical-align: bottom !important;
 		}
 		@media (min-width: 768px) {
 			.nhn-wave-wrap svg {
-				height: 90px;
+				height: 80px !important;
 			}
 		}
 
@@ -880,22 +1069,6 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 		.nhn-delay-1 { transition-delay: 0.12s; }
 		.nhn-delay-2 { transition-delay: 0.22s; }
 		.nhn-delay-3 { transition-delay: 0.32s; }
-		/* Homepage Full-bleed Edge-to-Edge Container Override */
-		.home .entry-content,
-		.home .entry-content.has-global-padding,
-		.page-id-8 .entry-content,
-		.page-id-8 .entry-content.has-global-padding {
-			padding-left: 0 !important;
-			padding-right: 0 !important;
-			max-width: 100% !important;
-			width: 100% !important;
-		}
-		.home .entry-content > *,
-		.page-id-8 .entry-content > * {
-			max-width: 100% !important;
-			margin-left: 0 !important;
-			margin-right: 0 !important;
-		}
 
 		/* Hero Video Section */
 		.nhn-hero-wrap {
@@ -1103,20 +1276,39 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 		<!-- BRAND LOGO (CỘT TRÁI) -->
 		
 		<div class="wp-block-group is-vertical is-layout-flex wp-container-core-group-is-layout-831b2db5 wp-block-group-is-layout-flex">
-			<h1 style="font-size:clamp(14.642px, 0.915rem + ((1vw - 3.2px) * 0.721), 22px);font-weight:800;line-height:1.15;letter-spacing:0.8px" class="wp-block-site-title"><a href="/" target="_self" rel="home">NẤM HẢI NAM</a></h1>
+			<h1 style="font-size:clamp(14.642px, 0.915rem + ((1vw - 3.2px) * 0.721), 22px);font-weight:800;line-height:1.15;letter-spacing:0.8px" class="wp-block-site-title"><a href="" target="_self" rel="home">NẤM HẢI NAM</a></h1>
 		</div>
 		
 
 		<!-- NAV & ACTIONS (CỘT PHẢI) -->
 		
 		<div class="wp-block-group is-nowrap is-layout-flex wp-container-core-group-is-layout-bed5a37a wp-block-group-is-layout-flex">
-			<nav class="is-responsive items-justified-right no-wrap wp-block-navigation is-content-justification-right is-nowrap is-layout-flex wp-container-core-navigation-is-layout-edc8defb wp-block-navigation-is-layout-flex" data-wp-interactive="core/navigation" data-wp-context='{"overlayOpenedBy":{"click":false,"hover":false,"focus":false},"type":"overlay","roleAttribute":"","ariaLabel":"Menu"}'><button aria-haspopup="dialog" aria-label="Open menu" class="wp-block-navigation__responsive-container-open" data-wp-on--click="actions.openMenuOnClick" data-wp-on--keydown="actions.handleMenuKeydown"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7.5h16v1.5H4z"></path><path d="M4 15h16v1.5H4z"></path></svg></button>
-				<div class="wp-block-navigation__responsive-container has-text-color has-contrast-color has-background has-base-background-color" id="modal-1" data-wp-class--has-modal-open="state.isMenuOpen" data-wp-class--is-menu-open="state.isMenuOpen" data-wp-watch="callbacks.initMenu" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on--focusout="actions.handleMenuFocusout" tabindex="-1">
+			<nav class="is-responsive items-justified-right no-wrap wp-block-navigation is-content-justification-right is-nowrap is-layout-flex wp-container-core-navigation-is-layout-edc8defb wp-block-navigation-is-layout-flex" 
+		 data-wp-interactive="core/navigation" data-wp-context='{"overlayOpenedBy":{"click":false,"hover":false,"focus":false},"type":"overlay","roleAttribute":"","ariaLabel":"Menu"}'><button aria-haspopup="dialog" aria-label="Open menu" class="wp-block-navigation__responsive-container-open" 
+				data-wp-on--click="actions.openMenuOnClick"
+				data-wp-on--keydown="actions.handleMenuKeydown"
+			><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7.5h16v1.5H4z"></path><path d="M4 15h16v1.5H4z"></path></svg></button>
+				<div class="wp-block-navigation__responsive-container has-text-color has-contrast-color has-background has-base-background-color"  id="modal-1" 
+				data-wp-class--has-modal-open="state.isMenuOpen"
+				data-wp-class--is-menu-open="state.isMenuOpen"
+				data-wp-watch="callbacks.initMenu"
+				data-wp-on--keydown="actions.handleMenuKeydown"
+				data-wp-on--focusout="actions.handleMenuFocusout"
+				tabindex="-1"
+			>
 					<div class="wp-block-navigation__responsive-close" tabindex="-1">
-						<div class="wp-block-navigation__responsive-dialog" data-wp-bind--aria-modal="state.ariaModal" data-wp-bind--aria-label="state.ariaLabel" data-wp-bind--role="state.roleAttribute">
-							<button aria-label="Close menu" class="wp-block-navigation__responsive-container-close" data-wp-on--click="actions.closeMenuOnClick"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="m13.06 12 6.47-6.47-1.06-1.06L12 10.94 5.53 4.47 4.47 5.53 10.94 12l-6.47 6.47 1.06 1.06L12 13.06l6.47 6.47 1.06-1.06L13.06 12Z"></path></svg></button>
-							<div class="wp-block-navigation__responsive-container-content" data-wp-watch="callbacks.focusFirstElement" id="modal-1-content">
-								<ul class="wp-block-navigation__container is-responsive items-justified-right no-wrap wp-block-navigation"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/"><span class="wp-block-navigation-item__label">Trang Chủ</span></a></li><li data-wp-context="{ &quot;submenuOpenedBy&quot;: { &quot;click&quot;: false, &quot;hover&quot;: false, &quot;focus&quot;: false }, &quot;type&quot;: &quot;submenu&quot;, &quot;modal&quot;: null, &quot;previousFocus&quot;: null }" data-wp-interactive="core/navigation" data-wp-on--focusout="actions.handleMenuFocusout" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on--pointerenter="actions.openMenuOnHover" data-wp-on--pointerleave="actions.closeMenuOnHover" data-wp-watch="callbacks.initMenu" tabindex="-1" class="wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu"><a class="wp-block-navigation-item__content" href="#"><span class="wp-block-navigation-item__label">Sản Phẩm</span></a><button data-wp-bind--aria-expanded="state.isSubmenuOpen" data-wp-on--click="actions.toggleMenuOnClick" aria-label="Sản Phẩm submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on--focus="actions.openMenuOnFocus" class="wp-block-navigation__submenu-container has-text-color has-contrast-color has-background has-base-background-color wp-block-navigation-submenu"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/nam-sach/"><span class="wp-block-navigation-item__label">Nấm Hữu Cơ Hải Nam</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/mat-ong/"><span class="wp-block-navigation-item__label">Mật Ong Dú Tự Nhiên</span></a></li></ul></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/about-us/"><span class="wp-block-navigation-item__label">Về Chúng Tôi</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="/contact/"><span class="wp-block-navigation-item__label">Liên Hệ</span></a></li></ul>
+						<div class="wp-block-navigation__responsive-dialog" 
+				data-wp-bind--aria-modal="state.ariaModal"
+				data-wp-bind--aria-label="state.ariaLabel"
+				data-wp-bind--role="state.roleAttribute"
+			>
+							<button aria-label="Close menu" class="wp-block-navigation__responsive-container-close" 
+				data-wp-on--click="actions.closeMenuOnClick"
+			><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="m13.06 12 6.47-6.47-1.06-1.06L12 10.94 5.53 4.47 4.47 5.53 10.94 12l-6.47 6.47 1.06 1.06L12 13.06l6.47 6.47 1.06-1.06L13.06 12Z"></path></svg></button>
+							<div class="wp-block-navigation__responsive-container-content" 
+				data-wp-watch="callbacks.focusFirstElement"
+			 id="modal-1-content">
+								<ul class="wp-block-navigation__container is-responsive items-justified-right no-wrap wp-block-navigation"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/"><span class="wp-block-navigation-item__label">Trang Chủ</span></a></li><li data-wp-context="{ &quot;submenuOpenedBy&quot;: { &quot;click&quot;: false, &quot;hover&quot;: false, &quot;focus&quot;: false }, &quot;type&quot;: &quot;submenu&quot;, &quot;modal&quot;: null, &quot;previousFocus&quot;: null }" data-wp-interactive="core/navigation" data-wp-on--focusout="actions.handleMenuFocusout" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on--pointerenter="actions.openMenuOnHover" data-wp-on--pointerleave="actions.closeMenuOnHover" data-wp-watch="callbacks.initMenu" tabindex="-1" class="wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu"><a class="wp-block-navigation-item__content" href="#"><span class="wp-block-navigation-item__label">Sản Phẩm</span></a><button data-wp-bind--aria-expanded="state.isSubmenuOpen" data-wp-on--click="actions.toggleMenuOnClick" aria-label="Sản Phẩm submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle" ><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false"><path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path></svg></button><ul data-wp-on--focus="actions.openMenuOnFocus" class="wp-block-navigation__submenu-container has-text-color has-contrast-color has-background has-base-background-color wp-block-navigation-submenu"><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/nam-sach/"><span class="wp-block-navigation-item__label">Nấm Hữu Cơ Hải Nam</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/mat-ong/"><span class="wp-block-navigation-item__label">Mật Ong Dú Tự Nhiên</span></a></li></ul></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/about-us/"><span class="wp-block-navigation-item__label">Về Chúng Tôi</span></a></li><li class="wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content"  href="/contact/"><span class="wp-block-navigation-item__label">Liên Hệ</span></a></li></ul>
 								
 							</div>
 						</div>
@@ -1126,7 +1318,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 			
 			<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
 				
-				<div class="wp-block-button has-custom-font-size has-small-font-size"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="tel:0900xxxxxx" style="border-radius:30px;color:#ffffff;background-color:#1e4620;padding:8px 20px;font-weight:700">Hotline: 0900.xxx.xxx</a></div>
+				<div class="wp-block-button has-custom-font-size has-small-font-size"><a class="wp-block-button__link has-text-color has-background wp-element-button" href="tel:0909378780" style="border-radius:30px;color:#ffffff;background-color:#1e4620;padding:8px 20px;font-weight:700">Hotline: 0909 378 780</a></div>
 				
 			</div>
 			
@@ -1149,7 +1341,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 		
 		<div class="wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrained" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 			
-			<h2 class="wp-block-post-title has-x-large-font-size"><a href="/chao-moi-nguoi/" target="_self">Chào tất cả mọi người!</a></h2>
+			<h2 class="wp-block-post-title has-x-large-font-size"><a href="/chao-moi-nguoi/" target="_self" >Chào tất cả mọi người!</a></h2>
 			<div class="entry-content alignfull wp-block-post-content has-medium-font-size has-global-padding is-layout-constrained wp-block-post-content-is-layout-constrained">
 <p class="wp-block-paragraph">Cảm ơn vì đã sử dụng WordPress. Đây là bài viết đầu tiên của bạn. Sửa hoặc xóa nó, và bắt đầu bài viết của bạn nhé!</p>
 </div>
@@ -1238,11 +1430,11 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 
 
 <p class="wp-block-paragraph" style="color:#b5c4b8;font-size:13px;line-height:1.9">
-<strong>Trụ sở &amp; Xưởng Nấm:</strong> Tổ 6, thôn Phước Thành, xã Tân Hòa, TX. Phú Mỹ, Bà Rịa – Vũng Tàu<br>
+<strong>Trụ sở &amp; Xưởng Nấm:</strong> Tổ 6, thôn Phước Thành, xã Tân Hòa, TX. Phú Mỹ, Bà Rịa &#8211; Vũng Tàu<br>
 <strong>Cơ sở ong dú:</strong> Xuyên Mộc, BR-VT<br>
-<strong>Hotline:</strong> <a href="tel:0900xxxxxx" style="color:#ffffff;font-weight:700;text-decoration:none">0900.xxx.xxx</a><br>
-<strong>Email:</strong> lienhe@namhainam.com<br>
-<strong>Giờ làm việc:</strong> 7:30 – 18:00 (Thứ 2 – Thứ 7)
+<strong>Hotline:</strong> <a href="tel:0909378780" style="color:#ffffff;font-weight:700;text-decoration:none">0909 378 780</a><br>
+<strong>Email:</strong> <a href="mailto:hainam.co.brvt@gmail.com" style="color:#ffffff;text-decoration:none">hainam.co.brvt@gmail.com</a><br>
+<strong>Giờ làm việc:</strong> 7:30 &#8211; 18:00 (Thứ 2 &#8211; Thứ 7)
 </p>
 
 </div>
@@ -1252,7 +1444,7 @@ a{text-decoration-thickness:1px!important;text-underline-offset:.1em}:where(.wp-
 
 
 
-<hr class="wp-block-separator has-text-color has-background" style="background-color:#233827;color:#233827;margin-top:40px;margin-bottom:30px">
+<hr class="wp-block-separator has-text-color has-background" style="background-color:#233827;color:#233827;margin-top:40px;margin-bottom:30px"/>
 
 
 
